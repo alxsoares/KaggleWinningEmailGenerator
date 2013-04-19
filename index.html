@@ -54,7 +54,7 @@
             <input type="checkbox" id="isResearch" ng-model="isResearch">
           </div>
         </div>
-        <div class="control-group">
+        <div class="control-group" ng-show="!isResearch">
           <label class="control-label" for="isModelSubmission">Did the competition require a model submission?</label>
           <div class="controls">
             <input type="checkbox" id="isModelSubmission" ng-model="isModelSubmission">
