@@ -20,7 +20,7 @@
         <div class="control-group">
           <label class="control-label" for="winnerPlace">Winner Place</label>
           <div class="controls">
-            <input type="text" id="winnerPlace" ng-model="winnerPlace" placeholder="Winner Place">
+            <input type="text" id="winnerPlace" ng-model="winnerPlace" placeholder="Winner Place (e.g. 1st)">
           </div>
         </div>
         <div class="control-group">
@@ -66,6 +66,10 @@
           </div>
         </div>
       </form>
+      <hr />
+      <p><b>Subject: </b>Congratulations on {{winnerPlace}} in the {{competitionName}} Competition!!!</p>
+      <p><b>To: </b>Competition hosts, members on this team</p>
+      <p><b>CC: </b>Kaggle data scientist who worked with the project</p>
       <hr />
       <p>Hi {{winnerName}},</p>
 
