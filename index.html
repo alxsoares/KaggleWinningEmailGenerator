@@ -1,0 +1,93 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <script src="winningEmail.js"></script>
+    <link rel="stylesheet" href="winningEmail.css">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div ng-controller="WinningEmail" class="content">
+      <h2>Winning Email Template</h2>
+      <form class="form-horizontal">
+        <div class="control-group">
+          <label class="control-label" for="winnerName">Winner Name(s)</label>
+          <div class="controls">
+            <input type="text" id="winnerName" ng-model="winnerName" placeholder="Winner Name(s)">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="winnerPlace">Winner Place</label>
+          <div class="controls">
+            <input type="text" id="winnerPlace" ng-model="winnerPlace" placeholder="Winner Place">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="hostContactName">Host Contact Name(s)</label>
+          <div class="controls">
+            <input type="text" id="hostContactName" ng-model="hostContactName" placeholder="Host Contact Name(s)">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="hostOrganizationName">Host Organization Name</label>
+          <div class="controls">
+            <input type="text" id="hostOrganizationName" ng-model="hostOrganizationName" placeholder="Host Organization Name">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="competitionName">Competition Name</label>
+          <div class="controls">
+            <input type="text" id="competitionName" ng-model="competitionName" placeholder="Competition Name">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="myName">My Name</label>
+          <div class="controls">
+            <input type="text" id="myName" ng-model="myName" placeholder="My Name">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="isResearch">Is this a research competition?</label>
+          <div class="controls">
+            <input type="checkbox" id="isResearch" ng-model="isResearch">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="isModelSubmission">Did the competition require a model submission?</label>
+          <div class="controls">
+            <input type="checkbox" id="isModelSubmission" ng-model="isModelSubmission">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="isHostOrganizationInUs">Is the host organization based in the US?</label>
+          <div class="controls">
+            <input type="checkbox" id="isHostOrganizationInUs" ng-model="isHostOrganizationInUs">
+          </div>
+        </div>
+      </form>
+      <hr />
+      <p>Hi {{winnerName}},</p>
+
+      <p>Congratulations on being the {{winnerPlace}} place preliminary winner(s) in the {{competitionName}} Competition!</p>
+      
+      <p>I'd like to introduce you to {{hostContactName}} from {{hostOrganizationName}} (CC'ed). You'll coordinate with him regarding the prize money. In order to be in compliance with US Sweepstakes laws, we must publicly post the First Name, Last Initial, City and Country for each of the prize winners.  Your entry will look like "Name, Initial, City, Country." We are happy to post your full name if you prefer, just let us know.</p>
+
+      <p><span ng-show="isModelSubmission && !isResearch">The model you submitted as a part of this competition is attached to this email. Please inform us of any modifications you needed to make to get it to run on the test set and let us know if you'd like to update the model for clarity or to add comments to the code.</span><span ng-show="!isModelSubmission && !isResearch">As a next step, please send both of us a copy of the code that you used in the competition (follow the <a href="https://www.kaggle.com/wiki/ModelSubmissionBestPractices">model submission best practices</a> if possible).</span> <span ng-show="!isResearch">Also, send us a written description of your methodology and insights (follow the <a href="https://www.kaggle.com/wiki/WinningModelDocumentationTemplate">winning model documentation template</a>).</span>
+      
+      <span ng-show="isResearch">As this is a research competition, you need to open source your winning model in order to receive recognition and/or prize money. Please do so by releasing the code with appropriate licensing information attached through a service like Github and link to this on the competition forums. Alternatively, your model may be attached to the forum post. Please publish an overview of your model following the <a href="https://www.kaggle.com/wiki/WinningModelDocumentationTemplate">winning model documentation template</a> with your code.</span></p>
+
+      <p>In order to receive prize money, you need to sign the agreement on the competition rules page. You will be receiving an email through EchoSign shortly and can sign the document there. <span ng-show="isHostOrganizationInUs">Additionally, you need to fill out the attached W9 form (or W8-BEN if you live outside the US) and send it to the competition host.</span></p>
+
+      <p>Also, we may set up a time to discuss your results with {{hostContactName}} over a 30-60 minute conference call or Skype conversation in the coming weeks.</p>
+
+      <p>As usual, we're planning to run a series of blog posts for each of the top competitors. Are you interested in this? If so, please refer to <a href="https://www.kaggle.com/wiki/CompetitionClosingProcess.HowIDidItBlogPost">this wiki page</a> for more information. You don't need to go into details on the specific model or parameters you used for this. Send the blog post to me, CC'ing all of the others on this email.</p>
+      
+      <p>Cheers,</p>
+      
+      <p>{{myName}}</p>
+      <br />
+      <hr />
+    </div>
+  </body>
+</html>

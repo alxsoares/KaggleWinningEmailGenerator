@@ -1,0 +1,21 @@
+.content {
+    margin: auto;
+    max-width: 800px;
+}
+
+.emailOptions {
+    max-width: 800px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+span.visible {
+    visibility: visible;
+}
+
+span.hidden {
+    visibility: hidden;
+}
